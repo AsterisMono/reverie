@@ -1,0 +1,5 @@
+formatter:
+  type: basic
+  retain_line_breaks: true
+  trim_trailing_whitespace: true
+  force_quote_style: double
