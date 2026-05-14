@@ -43,9 +43,11 @@ modules:
         - lazygit
         - ibus-rime
         - librime-lua
+        - direnv
         - https://downloads.1password.com/linux/rpm/stable/x86_64/1password-latest.rpm
         - https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.7/Clash.Verge-2.4.7-1.x86_64.rpm
         - https://github.com/xpipe-io/xpipe/releases/latest/download/xpipe-installer-linux-x86_64.rpm
+        - https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
     remove:
       packages:
         - firefox
@@ -70,7 +72,6 @@ modules:
     configurations:
       - notify: true
         install:
-          - com.google.Chrome
           - be.alexandervanhee.gradia
           - com.github.tchx84.Flatseal
           - com.mattjakeman.ExtensionManager
