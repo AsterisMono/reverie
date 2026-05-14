@@ -6,14 +6,7 @@ base-image: ghcr.io/ublue-os/silverblue-main
 image-version: 44
 
 modules:
-  - type: files
-    files:
-      - source: system
-        destination: /
-
-  - type: script
-    snippets:
-      - "mkdir -p /nix && chmod 0755 /nix"
+  - from-file: nix.yml
 
   - type: dnf
     repos:
@@ -28,8 +21,6 @@ modules:
       packages:
         - fish
         - gh
-        - nix
-        - nix-daemon
         - terra-release
         - starship
         - ghostty
@@ -58,11 +49,6 @@ modules:
   - type: script
     scripts:
       - rime-ice.sh
-
-  - type: systemd
-    system:
-      enabled:
-        - nix-daemon.service
 
   - type: chezmoi
     repository: "https://github.com/AsterisMono/dotfiles"
