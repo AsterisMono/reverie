@@ -1,44 +1,98 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
 name: reverie
-# description will be included in the image's metadata
-description: This is my personal OS image.
+description: the quiet workstation
 
-# the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 42 # latest is also supported if you want new updates ASAP
+image-version: 44
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
 modules:
   - type: files
     files:
       - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+        destination: /
+
+  - type: script
+    snippets:
+      - "mkdir -p /nix && chmod 0755 /nix"
 
   - type: dnf
     repos:
+      files:
+        - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
+        - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
       copr:
         - atim/starship
+        - agriffis/neovim-nightly
     install:
       packages:
-        - micro
+        - fish
+        - nix
+        - nix-daemon
+        - terra-release
         - starship
+        - ghostty
+        - zed
+        - neovim
+        - python3-neovim
+        - tailscale
+        - ripgrep
+        - atuin
+        - zoxide
+        - lazygit
+        - ibus-rime
+        - librime-lua
+        - https://downloads.1password.com/linux/rpm/stable/x86_64/1password-latest.rpm
+        - https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v2.4.7/Clash.Verge-2.4.7-1.x86_64.rpm
+        - https://github.com/xpipe-io/xpipe/releases/latest/download/xpipe-installer-linux-x86_64.rpm
     remove:
       packages:
-        # example: removing firefox (in favor of the flatpak)
-        # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - firefox-langpacks
+        - nvtop
+        - htop
+
+  - type: script
+    scripts:
+      - rime-ice.sh
+
+  - type: systemd
+    system:
+      enabled:
+        - nix-daemon.service
+
+  - type: chezmoi
+    repository: "https://github.com/AsterisMono/dotfiles"
+    file-conflict-policy: replace
 
   - type: default-flatpaks
     configurations:
-      - notify: true # Send notification after install/uninstall is finished (true/false)
-        scope: system
-        # If no repo information is specified, Flathub will be used by default
-        install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
-          - org.gnome.Loupe
-      - scope: user # Also add Flathub user repo, but no user packages
+      - notify: true
+        install:
+          - com.google.Chrome
+          - be.alexandervanhee.gradia
+          - com.github.tchx84.Flatseal
+          - com.mattjakeman.ExtensionManager
+          - com.slack.Slack
+          - com.tencent.wemeet
+          - io.github.kolunmi.Bazaar
+          - org.mozilla.Thunderbird
+          - org.telegram.desktop
+          - page.tesk.Refine
+          - org.localsend.localsend_app
 
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+  - type: gnome-extensions
+    install:
+      - 615 # AppIndicator and KStatusNotifierItem Support
+      - 3193 # Blur my Shell
+      - 517 # Caffeine
+      - 779 # Clipboard Indicator
+      - 1160 # Dash to Panel
+      - 6807 # System Monitor
+      - 6099 # PaperWM
+
+  - type: fonts
+    fonts:
+      nerd-fonts:
+        - FiraCode
+
+  - type: signing
