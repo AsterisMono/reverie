@@ -20,12 +20,14 @@ modules:
       files:
         - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+        - https://cli.github.com/packages/rpm/gh-cli.repo
       copr:
         - atim/starship
         - agriffis/neovim-nightly
     install:
       packages:
         - fish
+        - gh
         - nix
         - nix-daemon
         - terra-release
