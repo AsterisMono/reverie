@@ -57,7 +57,7 @@ modules:
 
   - type: default-flatpaks
     configurations:
-      - notify: true
+      - notify: false
         install:
           - be.alexandervanhee.gradia
           - com.github.tchx84.Flatseal
