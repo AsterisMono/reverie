@@ -70,6 +70,7 @@ modules:
           - org.telegram.desktop
           - page.tesk.Refine
           - org.localsend.localsend_app
+          - io.missioncenter.MissionCenter
 
   - type: gnome-extensions
     install:
