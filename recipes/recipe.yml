@@ -81,6 +81,10 @@ modules:
       - 6807 # System Monitor
       - 6099 # PaperWM
 
+  - type: gschema-overrides
+    include:
+      - zz1-gnome.gschema.override
+
   - type: fonts
     fonts:
       nerd-fonts:

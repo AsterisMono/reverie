@@ -1,0 +1,5 @@
+[org.gnome.desktop.interface]
+icon-theme='Tela-dark'
+
+[org.gnome.shell.extensions.paperwm]
+winprops=['{"wm_class":"org.telegram.desktop","title":"Media viewer","scratch_layer":true}']
