@@ -60,7 +60,6 @@ modules:
       - notify: false
         install:
           - be.alexandervanhee.gradia
-          - com.github.tchx84.Flatseal
           - com.mattjakeman.ExtensionManager
           - com.slack.Slack
           - com.tencent.wemeet
