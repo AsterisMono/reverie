@@ -6,6 +6,11 @@ base-image: ghcr.io/ublue-os/silverblue-main
 image-version: 44
 
 modules:
+  - type: files
+    files:
+      - source: system
+        destination: /
+
   - from-file: nix.yml
 
   - type: dnf
