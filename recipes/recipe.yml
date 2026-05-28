@@ -49,6 +49,12 @@ modules:
         - nvtop
         - htop
 
+  - type: rpm-ostree
+    repos:
+      - claude-code.repo
+    install:
+      - claude-code
+
   - type: script
     scripts:
       - rime-ice.sh
