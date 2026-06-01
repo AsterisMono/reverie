@@ -82,6 +82,7 @@ modules:
           - page.tesk.Refine
           - org.localsend.localsend_app
           - io.missioncenter.MissionCenter
+          - io.github.pwr_solaar.solaar
 
   - type: gnome-extensions
     install:
@@ -92,6 +93,7 @@ modules:
       - 1160 # Dash to Panel
       - 6807 # System Monitor
       - 6099 # PaperWM
+      - 307 # Dash to Dock
 
   - type: gschema-overrides
     include:
