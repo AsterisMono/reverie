@@ -3,3 +3,9 @@ icon-theme='Tela-dark'
 
 [org.gnome.shell.extensions.paperwm]
 winprops=['{"wm_class":"org.telegram.desktop","title":"Media viewer","scratch_layer":true}']
+
+[org.gnome.shell.extensions.blur-my-shell.dash-to-dock]
+style-dash-to-dock=2
+
+[org.gnome.shell.extensions.dash-to-dock]
+intellihide=false
