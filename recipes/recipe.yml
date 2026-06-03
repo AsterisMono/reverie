@@ -57,8 +57,11 @@ modules:
   - type: rpm-ostree
     repos:
       - claude-code.repo
+      - netbird.repo
     install:
       - claude-code
+      - netbird
+      - netbird-ui
 
   - type: script
     scripts:
