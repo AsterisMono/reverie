@@ -63,6 +63,11 @@ modules:
       - netbird
       - netbird-ui
 
+  - type: systemd
+    system:
+      enabled:
+        - netbird.service
+
   - type: script
     scripts:
       - rime-ice.sh
