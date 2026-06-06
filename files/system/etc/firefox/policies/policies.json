@@ -93,6 +93,7 @@
       "gfx.webrender.all": true,
       "media.ffmpeg.vaapi.enabled": true,
       "media.hardware-video-decoding.force-enabled": true,
+      "sidebar.revamp": false,
       "toolkit.legacyUserProfileCustomizations.stylesheets": true
     },
     "RequestedLocales": "zh-cn,zh,zh-tw,zh-hk,en-us,en"
