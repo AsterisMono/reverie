@@ -90,6 +90,7 @@
     "Preferences": {
       "browser.ctrlTab.sortByRecentlyUsed": true,
       "browser.newtabpage.activity-stream.feeds.topsites": false,
+      "browser.translations.automaticallyPopup": false,
       "gfx.webrender.all": true,
       "media.ffmpeg.vaapi.enabled": true,
       "media.hardware-video-decoding.force-enabled": true,
