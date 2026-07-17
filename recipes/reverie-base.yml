@@ -11,7 +11,6 @@ modules:
     repos:
       files:
         - https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo
-        - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
         - https://cli.github.com/packages/rpm/gh-cli.repo
       copr:
         - atim/starship
@@ -27,7 +26,6 @@ modules:
         - zed
         - neovim
         - python3-neovim
-        - tailscale
         - ripgrep
         - atuin
         - zoxide
@@ -100,6 +98,7 @@ modules:
       - 6807 # System Monitor
       - 6099 # PaperWM
       - 307 # Dash to Dock
+      - 1262 # Bing Wallpaper
 
   - type: gschema-overrides
     include:
@@ -109,5 +108,8 @@ modules:
     fonts:
       nerd-fonts:
         - FiraCode
+      url-fonts:
+        - name: Maple Mono
+          url: https://github.com/subframe7536/maple-font/releases/download/v7.9/MapleMonoNormalNL-OTF.zip
 
   - type: signing
