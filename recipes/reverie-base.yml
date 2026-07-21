@@ -61,6 +61,7 @@ modules:
     system:
       enabled:
         - netbird.service
+        - sing-box-daemon.service
 
   - type: script
     scripts:
