@@ -45,6 +45,7 @@ modules:
         - https://github.com/xpipe-io/xpipe/releases/latest/download/xpipe-installer-linux-x86_64.rpm
         - https://github.com/SagerNet/sing-box/releases/download/v1.14.0-alpha.48/SFL-1.14.0-alpha.48-x86_64.rpm
         - https://github.com/AsterisMono/Aster/releases/download/150.0.7871.128-1/aster-150.0.7871.128.rpm
+        - https://github.com/AsterisMono/codex-desktop-linux/releases/download/latest/codex-desktop.rpm
     remove:
       packages:
         - nvtop
